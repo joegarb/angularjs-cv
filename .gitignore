@@ -1,0 +1,5 @@
+# Bower folder
+www/lib
+
+# Deployment scripts
+*.bat

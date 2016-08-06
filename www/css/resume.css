@@ -1,0 +1,36 @@
+.navbar {
+  margin-bottom: 0;
+}
+
+.tagline-wrapper {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 3.5em;
+  margin-bottom: 20px;
+}
+
+.tagline {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: 'Quattrocento', serif;
+  font-size: 1.6em;
+}
+
+.tagline-name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.resume-nav {
+  margin-bottom: 20px;
+  float: left;
+}
+
+.resume-pdf-link {
+  float: right;
+  padding: 10px 15px;
+}
+
+.resume-content {
+  clear: both;
+}

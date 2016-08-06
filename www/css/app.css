@@ -1,0 +1,22 @@
+.print-only {
+  display: none;
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.emphasis {
+  font-weight: bold;
+}
