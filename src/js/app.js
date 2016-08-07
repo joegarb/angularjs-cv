@@ -1,4 +1,4 @@
-angular.module('joegarb', ['ngRoute', 'door3.css', 'joegarb.directives', 'joegarb.controllers'],
+angular.module('joegarb', ['ngRoute', 'angularCSS', 'joegarb.directives', 'joegarb.controllers'],
 
   // Routing
   function($routeProvider, $locationProvider) {
