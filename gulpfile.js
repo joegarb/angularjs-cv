@@ -13,7 +13,7 @@ gulp.task('build:js', function() {
   // todo: cache busting
   return gulp.src([
     'src/js/*.js',
-    'bower_components/angular-css/angular-css.min.js'
+    'node_modules/angular-css/angular-css.min.js'
   ]).pipe(concat('bundle.js'))
     .pipe(gulp.dest('dist'));
 });
