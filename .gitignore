@@ -1,5 +1,4 @@
-# Bower folder
-www/lib
-
-# Deployment scripts
+dist
+node_modules
+src/lib
 *.bat

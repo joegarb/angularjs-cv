@@ -1,0 +1,22 @@
+{
+  "name": "joegarbcom",
+  "version": "0.0.1",
+  "description": "The code behind joegarb.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joegarb/joegarbcom.git"
+  },
+  "author": "Joe Garber",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joegarb/joegarbcom/issues"
+  },
+  "homepage": "https://github.com/joegarb/joegarbcom#readme",
+  "devDependencies": {
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "run-sequence": "^1.2.2"
+  }
+}
