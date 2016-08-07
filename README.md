@@ -9,9 +9,11 @@ The code behind joegarb.com
 
 ## Installation
     npm install
+	npm install -g bower
+	bower install
 
 ## Build Development/Staging
     gulp
 
 ## Build Production
-    gulp build:production
+    gulp build:prod

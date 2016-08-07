@@ -18,7 +18,7 @@ gulp.task('build:js', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build:htaccess:production', function() {
+gulp.task('build:htaccess:prod', function() {
 	// Use the production version of the .htaccess
 	gulp.src('src/.htaccess.production')
 		.pipe(rename('.htaccess'))
@@ -41,11 +41,11 @@ gulp.task('build:static', function() {
 	]).pipe(gulp.dest('dist'));
 });
 
-gulp.task('build:production', (done) => {
+gulp.task('build:prod', (done) => {
 	runSequence(
 		'clean',
 		'build:js',
-		'build:htaccess:production',
+		'build:htaccess:prod',
 		'build:static',
 	done)
 });
