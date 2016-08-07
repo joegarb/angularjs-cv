@@ -13,7 +13,7 @@ gulp.task('build:js', function() {
 	// todo: cache busting
   return gulp.src([
 		'src/js/*.js',
-		'src/lib/angular-css/angular-css.min.js'
+		'bower_components/angular-css/angular-css.min.js'
 	]).pipe(concat('bundle.js'))
     .pipe(gulp.dest('dist'));
 });
@@ -37,7 +37,6 @@ gulp.task('build:static', function() {
 		'src/**',
 		// Exclude JS files already bundled and copied
 		'!src/js{,/**}',
-		'!src/lib{,/**}'
 	]).pipe(gulp.dest('dist'));
 });
 

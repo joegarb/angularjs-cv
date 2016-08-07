@@ -8,13 +8,13 @@ The code behind joegarb.com
 - npm
 
 ## Installation
-    $ npm install
-	$ npm install -g bower
-	$ npm install -g gulp
-	$ bower install
+	npm install -g bower
+	npm install -g gulp
+    npm install
+	bower install
 
-## Build Development/Staging
-    $ gulp
+## Build Development
+    gulp
 
 ## Build Production
-    $ gulp build:prod
+    gulp build:prod
