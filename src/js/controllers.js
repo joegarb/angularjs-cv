@@ -1,4 +1,4 @@
-angular.module('joegarb.controllers', ['ngRoute', 'ngResource'])
+angular.module('joegarb.controllers', ['ngRoute'])
 
   .controller('HeaderController', function($scope, $window, $location) {
     $scope.isActiveUrl = function(templateUrl) {
