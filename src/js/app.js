@@ -1,6 +1,7 @@
-angular.module('joegarb', ['ngRoute', 'angularCSS', 'joegarb.directives', 'joegarb.controllers'],
+'use strict';
 
-  // Routing
+require('angular').module('joegarb', ['ngRoute', 'angularCSS', 'joegarb.directives', 'joegarb.controllers'],
+
   function($routeProvider, $locationProvider) {
 
     $routeProvider.when(
@@ -19,3 +20,9 @@ angular.module('joegarb', ['ngRoute', 'angularCSS', 'joegarb.directives', 'joega
 
     $locationProvider.html5Mode(true);
   });
+
+require('angular-route');
+require('angular-css');
+
+require('./controllers');
+require('./directives');

@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     runSequence = require('run-sequence'),
     del = require('del'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    browserify = require('gulp-browserify');
 
 gulp.task('clean', function() {
   return del(['dist']);
@@ -12,9 +13,9 @@ gulp.task('build:js', function() {
   // Bundle JS files
   // todo: cache busting
   return gulp.src([
-    'src/js/*.js',
-    'node_modules/angular-css/angular-css.min.js'
-  ]).pipe(concat('bundle.js'))
+    'src/js/app.js'
+  ]).pipe(browserify())
+    .pipe(concat('bundle.js'))
     .pipe(gulp.dest('dist'));
 });
 

@@ -13,9 +13,12 @@
   },
   "homepage": "https://github.com/joegarb/joegarbcom#readme",
   "devDependencies": {
+    "angular": "^1.5.8",
     "angular-css": "^1.0.8",
+    "angular-route": "^1.5.8",
     "del": "^2.2.1",
     "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.0",
     "gulp-rename": "^1.2.2",
     "run-sequence": "^1.2.2"
