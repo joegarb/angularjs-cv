@@ -6,9 +6,16 @@ var rename = require('gulp-rename');
 var browserify = require('gulp-browserify');
 var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
+var eslint = require('gulp-eslint');
 
 gulp.task('clean', function() {
   return del(['dist']);
+});
+
+gulp.task('lint', function() {
+  return gulp.src(['src/**/*.js'])
+    .pipe(eslint())
+    .pipe(eslint.format());
 });
 
 gulp.task('build:js', function() {
@@ -63,6 +70,7 @@ gulp.task('build:prod', (done) => {
 gulp.task('build', (done) => {
   runSequence(
     'clean',
+    'lint',
     'build:js',
     'build:htaccess',
     'build:static',

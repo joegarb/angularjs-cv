@@ -17,13 +17,21 @@
     "angular-css": "^1.0.8",
     "angular-route": "^1.5.8",
     "del": "^2.2.1",
+    "eslint-config-google": "^0.6.0",
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.0",
+    "gulp-eslint": "^3.0.1",
     "gulp-htmlmin": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0",
     "run-sequence": "^1.2.2"
+  },
+  "eslintConfig": {
+    "extends": "google",
+    "globals": {
+      "$": true
+    }
   },
   "scripts": {
     "gulp": "gulp"
