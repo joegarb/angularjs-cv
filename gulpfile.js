@@ -8,7 +8,7 @@ var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
 var eslint = require('gulp-eslint');
 var cleanCSS = require('gulp-clean-css');
-var imagemin = require('gulp-imagemin');
+var inlinesource = require('gulp-inline-source');
 
 gulp.task('clean', function() {
   return del(['dist']);
@@ -45,11 +45,10 @@ gulp.task('build:htaccess', function() {
 });
 
 gulp.task('build:static', function() {
-  // Minify images
+  // Copy images
   gulp.src([
     'src/img{,/**}'
-  ]).pipe(imagemin())
-    .pipe(gulp.dest('dist'));
+  ]).pipe(gulp.dest('dist'));
 
   // Minify html
   gulp.src('src/**/*.html')
@@ -68,12 +67,20 @@ gulp.task('build:static', function() {
     .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task('inline', function() {
+  // Inline js/css/images in the html for faster loading
+  return gulp.src('dist/*.html')
+    .pipe(inlinesource())
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('build:prod', (done) => {
   runSequence(
     'clean',
     'build:js',
     'build:htaccess:prod',
     'build:static',
+    'inline',
   done)
 });
 
@@ -84,6 +91,7 @@ gulp.task('build', (done) => {
     'build:js',
     'build:htaccess',
     'build:static',
+    'inline',
   done)
 });
 
