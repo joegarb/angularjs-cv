@@ -10,7 +10,7 @@ require('angular').module(
       {
         templateUrl: 'templates/resume.html',
         controller: 'ResumeController',
-        css: 'css/resume.css'
+        css: 'css/specific/resume.css'
       }
     );
 

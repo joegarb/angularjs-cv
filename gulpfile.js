@@ -7,6 +7,7 @@ var browserify = require('gulp-browserify');
 var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
 var eslint = require('gulp-eslint');
+var cleanCSS = require('gulp-clean-css');
 
 gulp.task('clean', function() {
   return del(['dist']);
@@ -26,7 +27,7 @@ gulp.task('build:js', function() {
   ]).pipe(browserify())
     .pipe(uglify())
     .pipe(concat('bundle.js'))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('build:htaccess:prod', function() {
@@ -43,19 +44,26 @@ gulp.task('build:htaccess', function() {
 });
 
 gulp.task('build:static', function() {
-  // Copy static content to the output folder
+  // Copy images to the output folder
   gulp.src([
-    'src/**',
-    // Exclude JS files already bundled and copied
-    '!src/js{,/**}',
-    // Exclude HTML files which get minified below
-    '!src/**/*.html',
+    'src/img{,/**}'
   ]).pipe(gulp.dest('dist'));
 
   // Minify html
-  return gulp.src('src/**/*.html')
+  gulp.src('src/**/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist'));
+
+  // Minify css that can't be bundled
+  gulp.src('src/css/specific/**/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('dist/css/specific'));
+
+  // Bundle and minify the main css
+  return gulp.src('src/css/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(concat('bundle.css'))
+    .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('build:prod', (done) => {
