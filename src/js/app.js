@@ -1,7 +1,7 @@
 'use strict';
 
-require('angular').module('joegarb', ['ngRoute', 'angularCSS', 'joegarb.directives', 'joegarb.controllers'],
-
+require('angular').module('joegarb', ['ngRoute', 'angularCSS', 'joegarb.directives', 'joegarb.controllers'], [
+  '$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
 
     $routeProvider.when(
@@ -19,7 +19,7 @@ require('angular').module('joegarb', ['ngRoute', 'angularCSS', 'joegarb.directiv
       });
 
     $locationProvider.html5Mode(true);
-  });
+  }]);
 
 require('angular-route');
 require('angular-css');

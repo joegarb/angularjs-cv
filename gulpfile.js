@@ -1,9 +1,11 @@
-var gulp = require('gulp'),
-    concat = require('gulp-concat'),
-    runSequence = require('run-sequence'),
-    del = require('del'),
-    rename = require('gulp-rename'),
-    browserify = require('gulp-browserify');
+var gulp = require('gulp');
+var concat = require('gulp-concat');
+var runSequence = require('run-sequence');
+var del = require('del');
+var rename = require('gulp-rename');
+var browserify = require('gulp-browserify');
+var uglify = require('gulp-uglify');
+var htmlmin = require('gulp-htmlmin');
 
 gulp.task('clean', function() {
   return del(['dist']);
@@ -15,6 +17,7 @@ gulp.task('build:js', function() {
   return gulp.src([
     'src/js/app.js'
   ]).pipe(browserify())
+    .pipe(uglify())
     .pipe(concat('bundle.js'))
     .pipe(gulp.dest('dist'));
 });
@@ -38,7 +41,14 @@ gulp.task('build:static', function() {
     'src/**',
     // Exclude JS files already bundled and copied
     '!src/js{,/**}',
+    // Exclude HTML files which get minified below
+    '!src/**/*.html',
   ]).pipe(gulp.dest('dist'));
+
+  // Minify html
+  return gulp.src('src/**/*.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build:prod', (done) => {
