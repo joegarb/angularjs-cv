@@ -24,11 +24,11 @@ gulp.task('build:js', function() {
   // Bundle JS files
   // todo: cache busting
   return gulp.src([
-    'src/js/app.js'
+    'src/scripts/app.js'
   ]).pipe(browserify())
     .pipe(uglify())
     .pipe(concat('bundle.js'))
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('dist/scripts'));
 });
 
 gulp.task('build:htaccess:prod', function() {
@@ -47,7 +47,7 @@ gulp.task('build:htaccess', function() {
 gulp.task('build:static', function() {
   // Copy images
   gulp.src([
-    'src/img{,/**}'
+    'src/images{,/**}'
   ]).pipe(gulp.dest('dist'));
 
   // Minify html
@@ -56,15 +56,15 @@ gulp.task('build:static', function() {
     .pipe(gulp.dest('dist'));
 
   // Minify css that can't be bundled
-  gulp.src('src/css/specific/**/*.css')
+  gulp.src('src/styles/specific/**/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('dist/css/specific'));
+    .pipe(gulp.dest('dist/styles/specific'));
 
   // Bundle and minify the main css
-  return gulp.src('src/css/*.css')
+  return gulp.src('src/styles/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(concat('bundle.css'))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('dist/styles'));
 });
 
 gulp.task('inline', function() {
