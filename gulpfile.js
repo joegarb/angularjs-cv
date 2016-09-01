@@ -45,6 +45,12 @@ gulp.task('build:htaccess', function() {
 });
 
 gulp.task('build:static', function() {
+	// Copy sitemap.xml and robots.txt
+	gulp.src([
+		'src/*.xml',
+		'src/*.txt'
+	]).pipe(gulp.dest('dist'));
+
   // Copy images
   gulp.src([
     'src/images{,/**}'
