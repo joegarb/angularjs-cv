@@ -17,102 +17,23 @@
 
   <div class="tab-content resume-content">
     <div role="tabpanel" class="tab-pane fade in active" id="work-experience">
-      <div class="panel panel-default">
+      <div ng-repeat="job in jobs" class="panel panel-default">
         <div class="panel-heading clearfix">
-          <h3 class="panel-title fl"><span class="emphasis">Team Lead, Software Engineer</span> - Wayfair</h3>
-          <div class="badge fr">Aug. 2013 - Present</div>
+          <h3 class="panel-title fl"><span class="emphasis">{{job.title}}</span> - {{job.company}}</h3>
+          <div class="badge fr">{{job.dates}}</div>
         </div>
-        <div class="panel-body">
-          <p>As the tech lead and manager of a team of software engineers, I am helping Wayfair transform into a global company. I am responsible for building a flexible, extensive localization framework that is used by hundreds of engineers. Additionally, I work closely with business stakeholders to identify and prioritize my team’s engineering work and ensure we are furthering business initiatives. Since March 2016 I have served as the functional manager for my team.</p>
-          <p>Projects include:</p>
-          <ul>
-            <li>Building an automated process for the translation of customer-facing data into different languages.</li>
-            <li>Integrating with a third party, Smartling, using their RESTful API to send and receive data for manual translation.</li>
-            <li>Developing internal and customer-facing web apps using Wayfair’s Tungsten.js and Backbone.</li>
-            <li>Writing dynamic SQL used for the code generation of localized database tables and functions.</li>
-            <li>Creating generic PHP classes that are used for all operations against the localized tables, including asynchronous actions that need to be triggered when any data is modified, such as logging and synchronization.</li>
-            <li>Creating a system for tracking the translation status of data, including automatic flagging for re-translation.</li>
-          </ul>
-          <p>Other tasks include: Mentoring new hires and interns, reviewing others’ code, interviewing candidates, giving employee performance reviews, and participating in Wayfair’s Emerging Manager training program</p>
-          <p>Primary technologies: PHP, C#.NET, Javascript (Backbone, jQuery), MS SQL, WCF, Git</p>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-          <h3 class="panel-title fl"><span class="emphasis">Senior Software Engineer</span> - Blackbaud</h3>
-          <div class="badge fr">May 2010 - Aug. 2013</div>
-        </div>
-        <div class="panel-body">
-          <p>I worked on feature development for our CRM applications on the web and Windows. I worked on all layers of the tech stack on a geographically dispersed agile team managing both new and production software.</p>
-          <p>Projects included:</p>
-          <ul>
-            <li>Building bidirectional data synchronization between .NET and Java applications when Blackbaud acquired a competitor, Convio. This work included creating a WCF web service to communicate with a message queueing service bus, UIs for review of data, and deployment components.</li>
-            <li>Developing web services that powered Blackbaud’s Android and iOS apps.</li>
-            <li>Adding new features to Blackbaud’s web and desktop CRM applications, including fuzzy search capability, data de-duplication, a generic query builder user interface, and dashboards.</li>
-          </ul>
-          <p>Primary technologies: C# and VB.NET, WCF, Javascript (Ext JS, jQuery), MS SQL, TFS</p>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-          <h3 class="panel-title fl"><span class="emphasis">Software Quality Engineer</span> - Blackbaud</h3>
-          <div class="badge fr">June 2007 - April 2010</div>
-        </div>
-        <div class="panel-body">
-          I developed an automated software UI testing suite tied to continuous integration builds, testing both web and Windows applications. I became responsible for leading and mentoring three other engineers, and participated in planning and prioritizing projects for the team. In my spare time I familiarized myself with Blackbaud’s frameworks and completed software development tasks that enabled me to move into the Software Engineer role.
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-          <h3 class="panel-title fl"><span class="emphasis">Information Management Leadership Program Intern</span> - General Electric</h3>
-          <div class="badge fr">June 2006 - Aug. 2006</div>
-        </div>
-        <div class="panel-body">
-          This internship was focused on IT project management, delivering on a database migration project involving independent contractors.
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-          <h3 class="panel-title fl"><span class="emphasis">Web Development Intern</span> - WebQuix</h3>
-          <div class="badge fr">Jan. 2006 - May 2006</div>
-        </div>
-        <div class="panel-body">
-          I built websites using HTML, CSS, JavaScript and PHP as part of a software startup catering to professional photographers.
+        <div ng-bind-html="job.description | trustAsHtml" class="panel-body">
         </div>
       </div>
     </div>
 
     <div role="tabpanel" class="tab-pane fade" id="education">
-      <div class="panel panel-default">
+      <div ng-repeat="program in education" class="panel panel-default">
         <div class="panel-heading clearfix">
-          <h3 class="panel-title fl"><span class="emphasis">M.S. in Computer Information Systems</span> - Boston University</h3>
-          <div class="badge fr">May 2016</div>
+          <h3 class="panel-title fl"><span class="emphasis">{{program.degree}}</span> - {{program.school}}</h3>
+          <div class="badge fr">{{program.dates}}</div>
         </div>
-        <div class="panel-body">
-          <p>This program was a mix of software development courses and IT-specific management courses, which I pursued while working full-time for Wayfair. In addition to the challenge of time management it provided, this program served me well as a study in higher-level project planning and system analysis, as well as an introduction to AngularJS and CSS3, and a refresher on database design, HTML5 and Java.</p>
-          <p>Notable courses:</p>
-          <ul>
-            <li>IT Strategy and Management</li>
-            <li>Project Management</li>
-            <li>Enterprise Architecture</li>
-            <li>System Analysis</li>
-            <li>Web Application Development with AngularJS</li>
-            <li>Database Design</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-          <h3 class="panel-title fl"><span class="emphasis">B.S. in Computer Information Systems</span> - Clemson University</h3>
-          <div class="badge fr">May 2007</div>
-        </div>
-        <div class="panel-body">
-          This program was made up primarily of computer science courses, with just a splash of business and management.
+        <div ng-bind-html="program.description | trustAsHtml" class="panel-body">
         </div>
       </div>
     </div>

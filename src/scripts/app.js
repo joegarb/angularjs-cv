@@ -1,8 +1,10 @@
 'use strict';
 
+/* eslint max-len: "off" */
+
 require('angular').module(
   'joegarb',
-  ['ngRoute', 'angularCSS', 'joegarb.directives', 'joegarb.controllers'],
+  ['ngRoute', 'angularCSS', 'joegarb.controllers', 'joegarb.directives', 'joegarb.filters'],
   ['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider.when(
@@ -30,3 +32,4 @@ require('angular-css');
 
 require('./controllers');
 require('./directives');
+require('./filters');
