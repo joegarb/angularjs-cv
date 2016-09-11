@@ -3,17 +3,50 @@
 /* eslint no-implicit-coercion: "off", max-len: "off" */
 
 module.exports = function($scope, $routeParams) {
+  var moment = require('moment');
+
   // Enable the pills (tabs) functionality
   $('.nav-pills a').click(function(e) {
     e.preventDefault();
     $(this).tab('show');
   });
 
+  $scope.getDateString = function(date) {
+    if (!date) {
+      return 'Present';
+    }
+    return moment(date).format('MMM YYYY');
+  };
+
+  $scope.getDuration = function(startDate, endDate) {
+    var end;
+    if (endDate) {
+      end = moment(endDate);
+    } else {
+      end = moment();
+    }
+    var duration = moment.duration(end.diff(startDate));
+    var years = duration.years();
+    var months = duration.months();
+    var result = '';
+    if (years) {
+      result = years + ' years';
+    }
+    if (months) {
+      if (result) {
+        result += ' ';
+      }
+      result += months + ' months';
+    }
+    return result;
+  };
+
   $scope.jobs = [
     {
       title: 'Team Lead, Software Engineer',
       company: 'Wayfair',
-      dates: 'Aug. 2013 - Present',
+      startDate: '2013/08/01',
+      endDate: null,
       description: "" +
 "<p>As the tech lead and manager of a team of software engineers, I am helping Wayfair transform into a global company. I am responsible for building a flexible, extensive localization framework that is used by hundreds of engineers. Additionally, I work closely with business stakeholders to identify and prioritize my team’s engineering work and ensure we are furthering business initiatives. Since March 2016 I have served as the functional manager for my team.</p>" +
 "<p>Projects include:</p>" +
@@ -31,7 +64,8 @@ module.exports = function($scope, $routeParams) {
     {
       title: 'Senior Software Engineer',
       company: 'Blackbaud',
-      dates: 'May 2010 - Aug. 2013',
+      startDate: '2010/05/01',
+      endDate: '2013/08/01',
       description: "" +
 "<p>I worked on feature development for our CRM applications on the web and Windows. I worked on all layers of the tech stack on a geographically dispersed agile team managing both new and production software.</p>" +
 "<p>Projects included:</p>" +
@@ -45,19 +79,22 @@ module.exports = function($scope, $routeParams) {
     {
       title: 'Software Quality Engineer',
       company: 'Blackbaud',
-      dates: 'June 2007 - April 2010',
+      startDate: '2007/06/01',
+      endDate: '2010/05/01',
       description: "I developed an automated software UI testing suite tied to continuous integration builds, testing both web and Windows applications. I became responsible for leading and mentoring three other engineers, and participated in planning and prioritizing projects for the team. In my spare time I familiarized myself with Blackbaud’s frameworks and completed software development tasks that enabled me to move into the Software Engineer role."
     },
     {
       title: 'Information Management Leadership Program Intern',
       company: 'General Electric',
-      dates: 'June 2006 - Aug. 2006',
+      startDate: '2006/06/01',
+      endDate: '2006/08/01',
       description: "This internship was focused on IT project management, delivering on a database migration project involving independent contractors."
     },
     {
       title: 'Web Development Intern',
       company: 'WebQuix',
-      dates: 'Jan. 2006 - May 2006',
+      startDate: '2006/01/01',
+      endDate: '2006/05/01',
       description: "I built websites using HTML, CSS, JavaScript and PHP as part of a software startup catering to professional photographers."
     }
   ];
@@ -66,7 +103,7 @@ module.exports = function($scope, $routeParams) {
     {
       degree: 'M.S. in Computer Information Systems',
       school: 'Boston University',
-      dates: 'May 2016',
+      endDate: '2016/05/01',
       description: "" +
 "<p>This program was a mix of software development courses and IT-specific management courses, which I pursued while working full-time for Wayfair. In addition to the challenge of time management it provided, this program served me well as a study in higher-level project planning and system analysis, as well as an introduction to AngularJS and CSS3, and a refresher on database design, HTML5 and Java.</p>" +
 "<p>Notable courses:</p>" +
@@ -82,7 +119,7 @@ module.exports = function($scope, $routeParams) {
     {
       degree: 'B.S. in Computer Information Systems',
       school: 'Clemson University',
-      dates: 'May 2007',
+      endDate: '2007/05/01',
       description: "This program was made up primarily of computer science courses, with just a splash of business and management."
     }
   ];

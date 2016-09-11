@@ -27,6 +27,7 @@
     "gulp-inline-source": "^3.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0",
+    "moment": "^2.14.1",
     "run-sequence": "^1.2.2"
   },
   "eslintConfig": {
