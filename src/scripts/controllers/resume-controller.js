@@ -27,7 +27,7 @@ module.exports = function($scope, $routeParams) {
     }
     var duration = moment.duration(end.diff(startDate));
     var years = duration.years();
-    var months = duration.months();
+    var months = duration.months() + 1;
     var result = '';
     if (years) {
       result = years + ' years';
@@ -87,14 +87,14 @@ module.exports = function($scope, $routeParams) {
       title: 'Information Management Leadership Program Intern',
       company: 'General Electric',
       startDate: '2006/06/01',
-      endDate: '2006/08/01',
+      endDate: '2006/08/31',
       description: "This internship was focused on IT project management, delivering on a database migration project involving independent contractors."
     },
     {
       title: 'Web Development Intern',
       company: 'WebQuix',
       startDate: '2006/01/01',
-      endDate: '2006/05/01',
+      endDate: '2006/05/31',
       description: "I built websites using HTML, CSS, JavaScript and PHP as part of a software startup catering to professional photographers."
     }
   ];
