@@ -45,7 +45,7 @@ module.exports = function($scope, $routeParams) {
     {
       title: 'Team Lead, Software Engineer',
       company: 'Wayfair',
-      startDate: '2013/08/01',
+      startDate: '2013-08-01',
       endDate: null,
       description: "" +
 "<p>As the tech lead and manager of a team of software engineers, I am helping Wayfair transform into a global company. I am responsible for building a flexible, extensive localization framework that is used by hundreds of engineers. Additionally, I work closely with business stakeholders to identify and prioritize my team’s engineering work and ensure we are furthering business initiatives. Since March 2016 I have served as the functional manager for my team.</p>" +
@@ -64,8 +64,8 @@ module.exports = function($scope, $routeParams) {
     {
       title: 'Senior Software Engineer',
       company: 'Blackbaud',
-      startDate: '2010/05/01',
-      endDate: '2013/08/01',
+      startDate: '2010-05-01',
+      endDate: '2013-08-01',
       description: "" +
 "<p>I worked on feature development for our CRM applications on the web and Windows. I worked on all layers of the tech stack on a geographically dispersed agile team managing both new and production software.</p>" +
 "<p>Projects included:</p>" +
@@ -79,22 +79,22 @@ module.exports = function($scope, $routeParams) {
     {
       title: 'Software Quality Engineer',
       company: 'Blackbaud',
-      startDate: '2007/06/01',
-      endDate: '2010/05/01',
+      startDate: '2007-06-01',
+      endDate: '2010-05-01',
       description: "I developed an automated software UI testing suite tied to continuous integration builds, testing both web and Windows applications. I became responsible for leading and mentoring three other engineers, and participated in planning and prioritizing projects for the team. In my spare time I familiarized myself with Blackbaud’s frameworks and completed software development tasks that enabled me to move into the Software Engineer role."
     },
     {
       title: 'Information Management Leadership Program Intern',
       company: 'General Electric',
-      startDate: '2006/06/01',
-      endDate: '2006/08/31',
+      startDate: '2006-06-01',
+      endDate: '2006-08-31',
       description: "This internship was focused on IT project management, delivering on a database migration project involving independent contractors."
     },
     {
       title: 'Web Development Intern',
       company: 'WebQuix',
-      startDate: '2006/01/01',
-      endDate: '2006/05/31',
+      startDate: '2006-01-01',
+      endDate: '2006-05-31',
       description: "I built websites using HTML, CSS, JavaScript and PHP as part of a software startup catering to professional photographers."
     }
   ];
@@ -103,7 +103,7 @@ module.exports = function($scope, $routeParams) {
     {
       degree: 'M.S. in Computer Information Systems',
       school: 'Boston University',
-      endDate: '2016/05/01',
+      endDate: '2016-05-01',
       description: "" +
 "<p>This program was a mix of software development courses and IT-specific management courses, which I pursued while working full-time for Wayfair. In addition to the challenge of time management it provided, this program served me well as a study in higher-level project planning and system analysis, as well as an introduction to AngularJS and CSS3, and a refresher on database design, HTML5 and Java.</p>" +
 "<p>Notable courses:</p>" +
@@ -119,7 +119,7 @@ module.exports = function($scope, $routeParams) {
     {
       degree: 'B.S. in Computer Information Systems',
       school: 'Clemson University',
-      endDate: '2007/05/01',
+      endDate: '2007-05-01',
       description: "This program was made up primarily of computer science courses, with just a splash of business and management."
     }
   ];
