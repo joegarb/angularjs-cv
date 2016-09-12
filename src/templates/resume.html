@@ -20,7 +20,7 @@
       <div ng-repeat="job in jobs" class="panel panel-default">
         <div class="panel-heading clearfix">
           <h3 class="panel-title fl"><span class="emphasis">{{job.title}}</span> - {{job.company}}</h3>
-          <div class="badge fr">{{getDateString(job.startDate)}} - {{getDateString(job.endDate)}} ({{getDuration(job.startDate, job.endDate)}})</div>
+          <div class="fr">{{getDuration(job.startDate, job.endDate)}} ({{getDateString(job.startDate)}} - {{getDateString(job.endDate)}})</div>
         </div>
         <div ng-bind-html="job.description | trustAsHtml" class="panel-body">
         </div>
@@ -31,7 +31,7 @@
       <div ng-repeat="program in education" class="panel panel-default">
         <div class="panel-heading clearfix">
           <h3 class="panel-title fl"><span class="emphasis">{{program.degree}}</span> - {{program.school}}</h3>
-          <div class="badge fr">Completed {{getDateString(program.endDate)}}</div>
+          <div class="fr">Completed {{getDateString(program.endDate)}}</div>
         </div>
         <div ng-bind-html="program.description | trustAsHtml" class="panel-body">
         </div>
