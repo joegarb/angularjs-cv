@@ -10,9 +10,9 @@ require('angular').module(
     $routeProvider.when(
       '/resume',
       {
-        templateUrl: 'templates/resume.html',
+        templateUrl: 'components/resume/resume.html',
         controller: 'ResumeController',
-        css: 'styles/specific/resume.css'
+        css: 'components/resume/resume.css'
       }
     );
 
@@ -30,6 +30,5 @@ require('angular').module(
 require('angular-route');
 require('angular-css');
 
-require('./controllers');
-require('./directives');
-require('./filters');
+require('./components');
+require('./shared');

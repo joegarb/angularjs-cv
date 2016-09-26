@@ -24,11 +24,11 @@ gulp.task('build:js', function() {
   // Bundle JS files
   // todo: cache busting
   return gulp.src([
-    'src/scripts/app.js'
+    'src/index.js'
   ]).pipe(browserify())
     .pipe(uglify())
     .pipe(concat('bundle.js'))
-    .pipe(gulp.dest('dist/scripts'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build:htaccess:prod', function() {
@@ -53,7 +53,7 @@ gulp.task('build:static', function() {
 
   // Copy images
   gulp.src([
-    'src/images{,/**}'
+    'src/**/*.png'
   ]).pipe(gulp.dest('dist'));
 
   // Minify html
@@ -62,15 +62,18 @@ gulp.task('build:static', function() {
     .pipe(gulp.dest('dist'));
 
   // Minify css that can't be bundled
-  gulp.src('src/styles/specific/**/*.css')
+  gulp.src('src/components/**/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('dist/styles/specific'));
+    .pipe(gulp.dest('dist/components'));
+  gulp.src('src/shared/styles/specific/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('dist/shared/styles/specific'));
 
   // Bundle and minify the main css
-  return gulp.src('src/styles/*.css')
+  return gulp.src('src/shared/styles/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(concat('bundle.css'))
-    .pipe(gulp.dest('dist/styles'));
+    .pipe(gulp.dest('dist/shared/styles'));
 });
 
 gulp.task('inline', function() {
@@ -97,7 +100,7 @@ gulp.task('build', (done) => {
     'build:js',
     'build:htaccess',
     'build:static',
-    'inline',
+    //'inline',
   done)
 });
 
