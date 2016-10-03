@@ -48,7 +48,7 @@ module.exports = function($scope, $routeParams) {
       startDate: '2013-08-01',
       endDate: null,
       description: "" +
-"<p>As the tech lead and manager of a team of software engineers, I am helping Wayfair transform into a global company. I am responsible for building a flexible, extensive localization framework that is used by hundreds of engineers. Additionally, I work closely with business stakeholders to identify and prioritize my team’s engineering work and ensure we are furthering business initiatives. Since March 2016 I have served as the functional manager for my team.</p>" +
+"<p>As the tech lead of a team of software engineers, I am helping Wayfair transform into a global company. I am responsible for building a flexible, extensive localization framework that is used by hundreds of engineers. Additionally, I work closely with business stakeholders to identify and prioritize my team’s engineering work and ensure we are furthering business initiatives. Since March 2016 I have also served as the functional manager for my team.</p>" +
 "<p>Projects include:</p>" +
 "<ul>" +
 "  <li>Building an automated process for the translation of customer-facing data into different languages.</li>" +
@@ -105,7 +105,7 @@ module.exports = function($scope, $routeParams) {
       school: 'Boston University',
       endDate: '2016-05-01',
       description: "" +
-"<p>This program was a mix of software development courses and IT-specific management courses, which I pursued while working full-time for Wayfair. In addition to the challenge of time management it provided, this program served me well as a study in higher-level project planning and system analysis, as well as an introduction to AngularJS and CSS3, and a refresher on database design, HTML5 and Java.</p>" +
+"<p>This program was a mix of software development and technology leadership courses that I pursued while working full-time for Wayfair.</p>" +
 "<p>Notable courses:</p>" +
 "<ul>" +
 "  <li>IT Strategy and Management</li>" +
