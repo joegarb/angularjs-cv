@@ -65,9 +65,9 @@ gulp.task('build:static', function() {
   gulp.src('src/components/**/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('dist/components'));
-  gulp.src('src/shared/styles/specific/*.css')
+  gulp.src('src/shared/styles/unbundled/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('dist/shared/styles/specific'));
+    .pipe(gulp.dest('dist/shared/styles/unbundled'));
 
   // Bundle and minify the main css
   return gulp.src('src/shared/styles/*.css')
