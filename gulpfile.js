@@ -8,7 +8,9 @@ var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
 var eslint = require('gulp-eslint');
 var cleanCSS = require('gulp-clean-css');
-var inlinesource = require('gulp-inline-source');
+var inlineSource = require('gulp-inline-source');
+var browserSync = require('browser-sync').create();
+var modRewrite  = require('connect-modrewrite');
 
 gulp.task('clean', function() {
   return del(['dist']);
@@ -18,6 +20,16 @@ gulp.task('lint', function() {
   return gulp.src(['src/**/*.js'])
     .pipe(eslint())
     .pipe(eslint.format());
+});
+
+// This fastbuild version of build:js just skips minification for speed; otherwise it's the same as the build:js task
+gulp.task('fastbuild:js', function() {
+  // Bundle JS files
+  return gulp.src([
+    'src/index.js'
+  ]).pipe(browserify())
+    .pipe(concat('bundle.js'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build:js', function() {
@@ -31,6 +43,12 @@ gulp.task('build:js', function() {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('build:htaccess:staging', function() {
+  // Just copy the .htaccess since it is already the dev/staging version
+  gulp.src('src/.htaccess')
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('build:htaccess:prod', function() {
   // Use the production version of the .htaccess
   gulp.src('src/.htaccess.production')
@@ -38,10 +56,27 @@ gulp.task('build:htaccess:prod', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build:htaccess', function() {
-  // Just copy the .htaccess since it is already the dev/staging version
-  gulp.src('src/.htaccess')
+// This fastbuild version of build:static just skips minification for speed; otherwise it's the same as the build:static task
+gulp.task('fastbuild:static', function() {
+  // Copy images
+  gulp.src([
+    'src/**/*.png'
+  ]).pipe(gulp.dest('dist'));
+
+  // Copy html
+  gulp.src('src/**/*.html')
     .pipe(gulp.dest('dist'));
+
+  // Copy css that can't be bundled
+  gulp.src('src/components/**/*.css')
+    .pipe(gulp.dest('dist/components'));
+  gulp.src('src/shared/styles/unbundled/*.css')
+    .pipe(gulp.dest('dist/shared/styles/unbundled'));
+
+  // Bundle and copy the main css
+  return gulp.src('src/shared/styles/*.css')
+    .pipe(concat('bundle.css'))
+    .pipe(gulp.dest('dist/shared/styles'));
 });
 
 gulp.task('build:static', function() {
@@ -79,29 +114,70 @@ gulp.task('build:static', function() {
 gulp.task('inline', function() {
   // Inline js/css/images in the html for faster loading
   return gulp.src('dist/*.html')
-    .pipe(inlinesource())
+    .pipe(inlineSource())
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build:prod', (done) => {
+gulp.task('init-browser-sync', function() {
+  browserSync.init({
+    server: {
+      baseDir: './dist',
+      middleware: [
+        // Mimic the rewrite rule in our .htaccess since that isn't used when the app is served up by browser-sync. Necessary for Angular HTML5 mode.
+        modRewrite([
+          '!\\.\\w+$ /index.html [L]'
+        ])
+      ]
+    }
+  })
+});
+
+gulp.task('browser-sync-reload', function() {
+  browserSync.reload();
+});
+
+gulp.task('watch', function() {
+  gulp.watch('./src/**/*.*').on('change', function() {
+    runSequence('build:dev', 'browser-sync-reload');
+  });
+});
+
+gulp.task('dev', function() {
+  runSequence(
+    'clean',
+    'build:dev',
+    'init-browser-sync',
+    'watch'
+  );
+});
+
+gulp.task('build:dev', function(callback) {
+  runSequence(
+    'fastbuild:js',
+    'fastbuild:static',
+    callback
+  );
+});
+
+gulp.task('build:staging', function(callback) {
+  runSequence(
+    'clean',
+    'lint',
+    'build:js',
+    'build:htaccess:staging',
+    'build:static',
+    'inline',
+    callback
+  );
+});
+
+gulp.task('build:prod', function(callback) {
   runSequence(
     'clean',
     'build:js',
     'build:htaccess:prod',
     'build:static',
     'inline',
-  done)
+    callback
+  );
 });
-
-gulp.task('build', (done) => {
-  runSequence(
-    'clean',
-    'lint',
-    'build:js',
-    'build:htaccess',
-    'build:static',
-    //'inline',
-  done)
-});
-
-gulp.task('default', ['build']);

@@ -16,6 +16,8 @@
     "angular": "^1.5.8",
     "angular-css": "^1.0.8",
     "angular-route": "^1.5.8",
+    "browser-sync": "^2.18.6",
+    "connect-modrewrite": "^0.9.0",
     "del": "^2.2.1",
     "eslint-config-google": "^0.6.0",
     "gulp": "^3.9.1",
@@ -37,6 +39,8 @@
     }
   },
   "scripts": {
-    "gulp": "gulp"
+    "start": "gulp dev",
+    "build-staging": "gulp build:staging",
+    "build": "gulp build:prod"
   }
 }

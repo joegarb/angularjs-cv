@@ -10,8 +10,8 @@ The code behind joegarb.com
 ## Installation
     npm install
 
-## Build Development
-    npm run gulp
+## Run Development Server
+    npm start
 
-## Build Production
-    npm run gulp build:prod
+## Build For Production Environment
+    npm run build
