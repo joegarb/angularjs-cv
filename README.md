@@ -6,6 +6,7 @@ The code behind joegarb.com
 ## Requirements
 - node
 - npm
+- docker (for production)
 
 ## Installation
     npm install
@@ -13,5 +14,7 @@ The code behind joegarb.com
 ## Run Development Server
     npm start
 
-## Build For Production Environment
+## Run Production Server
     npm run build
+    docker build -t joegarbcom .
+    docker run -dit -p 80:80 --restart=always --name joegarbcom joegarbcom
