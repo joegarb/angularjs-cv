@@ -43,19 +43,6 @@ gulp.task('build:js', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build:htaccess:staging', function() {
-  // Just copy the .htaccess since it is already the dev/staging version
-  gulp.src('src/.htaccess')
-    .pipe(gulp.dest('dist'));
-});
-
-gulp.task('build:htaccess:prod', function() {
-  // Use the production version of the .htaccess
-  gulp.src('src/.htaccess.production')
-    .pipe(rename('.htaccess'))
-    .pipe(gulp.dest('dist'));
-});
-
 // This fastbuild version of build:static just skips minification for speed; otherwise it's the same as the build:static task
 gulp.task('fastbuild:static', function() {
   // Copy images
@@ -80,11 +67,15 @@ gulp.task('fastbuild:static', function() {
 });
 
 gulp.task('build:static', function() {
-	// Copy sitemap.xml and robots.txt
-	gulp.src([
-		'src/*.xml',
-		'src/*.txt'
-	]).pipe(gulp.dest('dist'));
+  // Copy the .htaccess
+  gulp.src('src/.htaccess')
+    .pipe(gulp.dest('dist'));
+
+  // Copy sitemap.xml and robots.txt
+  gulp.src([
+    'src/*.xml',
+    'src/*.txt'
+  ]).pipe(gulp.dest('dist'));
 
   // Copy images
   gulp.src([
@@ -164,7 +155,6 @@ gulp.task('build:staging', function(callback) {
     'clean',
     'lint',
     'build:js',
-    'build:htaccess:staging',
     'build:static',
     'inline',
     callback
@@ -175,7 +165,6 @@ gulp.task('build:prod', function(callback) {
   runSequence(
     'clean',
     'build:js',
-    'build:htaccess:prod',
     'build:static',
     'inline',
     callback

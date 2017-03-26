@@ -1,1 +1,1 @@
-Sitemap: http://www.joegarb.com/sitemap.xml
+Sitemap: http://joegarb.com/sitemap.xml
