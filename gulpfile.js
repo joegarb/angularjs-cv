@@ -133,12 +133,14 @@ gulp.task('watch', function() {
   });
 });
 
-gulp.task('dev', function() {
+gulp.task('dev', function(callback) {
   runSequence(
     'clean',
+    'lint',
     'build:dev',
     'init-browser-sync',
-    'watch'
+    'watch',
+    callback
   );
 });
 
@@ -150,18 +152,7 @@ gulp.task('build:dev', function(callback) {
   );
 });
 
-gulp.task('build:staging', function(callback) {
-  runSequence(
-    'clean',
-    'lint',
-    'build:js',
-    'build:static',
-    'inline',
-    callback
-  );
-});
-
-gulp.task('build:prod', function(callback) {
+gulp.task('build', function(callback) {
   runSequence(
     'clean',
     'build:js',
