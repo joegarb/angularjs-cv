@@ -7,6 +7,7 @@ The code behind joegarb.com
 - node
 - npm
 - docker (for production)
+- docker-compose (for HTTPS in production)
 
 ## Setup
     npm install
@@ -18,4 +19,8 @@ The code behind joegarb.com
     npm run build
     docker build -t joegarbcom .
     docker rm -f joegarbcom
-    docker run -dit -p 80:80 --restart=always --name joegarbcom joegarbcom
+    docker run -dit -p 80:80 --name joegarbcom joegarbcom
+
+## Set up HTTPS
+
+Instructions: https://bitbucket.org/automationlogic/le-docker-compose
