@@ -1,0 +1,124 @@
+.splash-container {
+	background-image: url('/components/cv/cover.jpg');
+	background-size: cover;
+}
+
+.splash {
+	background-color:#333;
+	width: 100%;
+	color: #fff;
+	display: inline;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+.timeline {
+	position: relative;
+	margin: 0 1em;
+	padding: 0;
+	list-style: none;
+}
+
+/* Vertical bars on the left and right */
+.timeline:before,
+.timeline:after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	bottom: 0;
+	width: 5px;
+	background: #ddd;
+	border: 1px solid #eee;
+	margin: 0 0 -40px 0;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.timeline:before {
+	left: 30px;
+}
+.timeline:after {
+	right: 30px;
+}
+
+.timeline > li {
+	position: relative;
+	margin: 20px 60px 60px 60px;
+}
+
+.timeline > li:after {
+	clear: both;
+}
+
+.timeline .timeline-date {
+	padding: 5px;
+	background-color: #fff;
+	color: #666;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	position: absolute;
+	z-index: 999;
+	top: 20px;
+}
+.timeline .timeline-left .timeline-date {
+	left: -60px;
+}
+.timeline .timeline-right .timeline-date {
+	right: -60px;
+}
+
+.timeline .timeline-icon {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	width: 30px;
+	height: 30px;
+	font-size: 15px;
+	line-height: 30px;
+	position: absolute;
+	color: #666;
+	background: #eee;
+	border-radius: 50%;
+	text-align: center;
+	top: 80px;
+	z-index: 999;
+}
+.timeline .timeline-left .timeline-icon {
+	left: -42px;
+}
+.timeline .timeline-right .timeline-icon {
+	right: -42px;
+}
+
+.timeline .timeline-item {
+	background: #fff;
+	color: #555;
+	padding: 60px 20px 20px 20px;
+	position: relative;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	top: 20px;
+}
+
+.timeline .timeline-header {
+	margin: 0;
+	color: #555;
+	border-bottom: 1px solid #f4f4f4;
+	padding: 5px 5px 5px 0;
+	font-size: 16px;
+	line-height: 1.1;
+}
+
+.timeline .timeline-header a {
+	font-weight: 600;
+}
+
+.timeline > .timeline-body {
+	padding: 10px;
+}
+
+.timeline .timeline-item p {
+	margin-bottom: 0;
+}

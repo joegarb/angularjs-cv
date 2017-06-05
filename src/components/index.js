@@ -8,6 +8,6 @@ app.controller(
 );
 
 app.controller(
-  'ResumeController',
-  ['$scope', '$routeParams', require('./resume/resume.js')]
+  'CvController',
+  ['$scope', '$routeParams', require('./cv/cv.js')]
 );

@@ -9,18 +9,26 @@ require('angular').module(
   ['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
       $routeProvider.when(
-        '/resume',
+        '/cv',
         {
-          templateUrl: 'components/resume/resume.html',
-          controller: 'ResumeController',
-          css: 'components/resume/resume.css'
+          templateUrl: 'components/cv/cv.html',
+          controller: 'CvController',
+          css: 'components/cv/cv.css'
         }
       );
 
-      // Redirect all requests to the resume page
+      // In case anyone has the outdated resume link, redirect it to cv
+      $routeProvider.when(
+        '/resume',
+        {
+          redirectTo: '/cv'
+        }
+      );
+
+      // Redirect all requests to the cv page until we have a proper home page
       $routeProvider.otherwise(
         {
-          redirectTo: '/resume'
+          redirectTo: '/cv'
         }
       );
 

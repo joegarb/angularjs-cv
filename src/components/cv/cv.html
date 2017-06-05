@@ -1,0 +1,25 @@
+<div class="splash-container">
+  <div class="splash">
+    <h1 class="splash-head">Hi, I'm Joe Garber</h1>
+    <p class="splash-subhead">
+      An experienced software engineer, proficient in a wide range of technologies and passionate for software quality and process improvement.
+    </p>
+  </div>
+</div>
+
+<div class="content-wrapper">
+  <div class="content">
+    <h2 class="content-head is-center">Experience</h2>
+    <ul class="timeline">
+      <li ng-repeat="item in data.experience" class="{{item.type == 'school' ? 'timeline-right' : 'timeline-left'}}">
+        <div ng-if="item.type == 'school'" class="timeline-date">Completed {{getDateString(item.endDate)}}</div>
+        <div ng-if="item.type != 'school'" class="timeline-date">{{getDuration(item.startDate, item.endDate)}} ({{getDateString(item.startDate)}} - {{getDateString(item.endDate)}})</div>
+        <i class="timeline-icon fa {{item.type == 'school' ? 'fa-graduation-cap' : 'fa-briefcase'}}" ng-class=""></i>
+        <div class="timeline-item">
+          <h3 class="timeline-header">{{item.role}} - {{item.organization}}</h3>
+          <div class="timeline-body" ng-bind-html="item.description | trustAsHtml"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -14,39 +14,44 @@
     "description": "An experienced software engineer, proficient in a wide range of technologies and passionate for software quality and process improvement."
   }
   </script>
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <script src="https://use.fontawesome.com/6e0e5cc21c.js"></script>
+  
+  <!--[if lt IE 9]>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  <![endif]-->
+
   <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
   <link rel="stylesheet" href="shared/styles/bundle.css" inline>
-  <link rel="stylesheet" href="shared/styles/unbundled/print.css" media="print" inline>
   <script src="bundle.js" inline></script>
 </head>
 
 <body>
-<header ng-controller="HeaderController">
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li ng-class="{ active: isActiveUrl('/resume')}"><a jg-href="/resume">Resume</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://www.linkedin.com/in/joegarb"><img src="components/header/In-2CRev-21px-R.png" title="LinkedIn" inline /></a></li>
-          <li><a href="https://github.com/joegarb"><img src="components/header/GitHub-Mark-Light-32px.png" title="GitHub" height="21px" inline /></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-<article ng-view>
-</article>
+
+<div class="header" ng-controller="HeaderController">
+  <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+    <a class="pure-menu-heading" href="/">Joe Garber</a>
+    <ul class="pure-menu-list pure-menu-pages">
+      <li class="pure-menu-item"><a jg-href="/cv" class="pure-menu-link">CV</a></li>
+    </ul>
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item"><a jg-href="https://www.linkedin.com/in/joegarb" target="_blank" class="pure-menu-link"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+      <li class="pure-menu-item"><a jg-href="https://github.com/joegarb" target="_blank" class="pure-menu-link"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</div>
+
+<div ng-view>
+</div>
+
 </body>
 </html>

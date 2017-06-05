@@ -3,13 +3,7 @@
 module.exports = function($scope, $routeParams) {
   var moment = require('moment');
 
-  $scope.data = require('./resume.json');
-
-  // Enable the pills (tabs) functionality
-  $('.nav-pills a').click(function(e) {
-    e.preventDefault();
-    $(this).tab('show');
-  });
+  $scope.data = require('./cv.json');
 
   $scope.getDateString = function(date) {
     if (!date) {

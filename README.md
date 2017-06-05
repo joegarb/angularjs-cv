@@ -20,7 +20,3 @@ The code behind joegarb.com
     docker build -t joegarbcom .
     docker rm -f joegarbcom
     docker run -dit -p 80:80 --name joegarbcom joegarbcom
-
-## Set up HTTPS
-
-Instructions: https://bitbucket.org/automationlogic/le-docker-compose

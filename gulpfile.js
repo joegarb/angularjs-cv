@@ -47,7 +47,7 @@ gulp.task('build:js', function() {
 gulp.task('fastbuild:static', function() {
   // Copy images
   gulp.src([
-    'src/**/*.png'
+    'src/**/*.{png,jpg}'
   ]).pipe(gulp.dest('dist'));
 
   // Copy html
@@ -79,7 +79,7 @@ gulp.task('build:static', function() {
 
   // Copy images
   gulp.src([
-    'src/**/*.png'
+    'src/**/*.{png,jpg}'
   ]).pipe(gulp.dest('dist'));
 
   // Minify html
