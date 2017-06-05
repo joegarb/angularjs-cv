@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gulpif = require('gulp-if');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
 var del = require('del');
@@ -11,6 +12,8 @@ var cleanCSS = require('gulp-clean-css');
 var inlineSource = require('gulp-inline-source');
 var browserSync = require('browser-sync').create();
 var modRewrite  = require('connect-modrewrite');
+var rev = require('gulp-rev');
+var revReplace = require('gulp-rev-replace');
 
 gulp.task('clean', function() {
   return del(['dist']);
@@ -34,7 +37,6 @@ gulp.task('fastbuild:js', function() {
 
 gulp.task('build:js', function() {
   // Bundle JS files
-  // todo: cache busting
   return gulp.src([
     'src/index.js'
   ]).pipe(browserify())
@@ -152,12 +154,24 @@ gulp.task('build:dev', function(callback) {
   );
 });
 
+gulp.task('version', [], function () {
+  gulp.src([
+    'dist/**/*.html',
+    'dist/**/*.css',
+    'dist/**/*.js',
+    'dist/**/*.{jpg,png,jpeg,gif,svg}'])
+    .pipe(gulpif('!index.html', rev())) // Rename files except for index.html
+    .pipe(revReplace()) // Replace within each file any references to files that got renamed
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('build', function(callback) {
   runSequence(
     'clean',
     'build:js',
     'build:static',
     'inline',
+    'version',
     callback
   );
 });
