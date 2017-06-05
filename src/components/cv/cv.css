@@ -14,9 +14,16 @@
 
 .timeline {
 	position: relative;
-	margin: 0 1em;
+	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+
+/* TABLET (AND UP) MEDIA QUERIES */
+@media (min-width: 48em) {
+	.timeline {
+		margin: 0 1em;
+	}
 }
 
 /* Vertical bars on the left and right */
