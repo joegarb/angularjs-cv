@@ -11,7 +11,7 @@
   <div class="content">
     <h2 class="content-head is-center">Experience</h2>
     <ul class="timeline">
-      <li ng-repeat="item in data.experience" class="{{item.type == 'school' ? 'timeline-right' : 'timeline-left'}}">
+      <li ng-repeat="item in data.experience">
         <div ng-if="item.type == 'school'" class="timeline-date">Completed {{getDateString(item.endDate)}}</div>
         <div ng-if="item.type != 'school'" class="timeline-date">{{getDuration(item.startDate, item.endDate)}} ({{getDateString(item.startDate)}} - {{getDateString(item.endDate)}})</div>
         <i class="timeline-icon fa {{item.type == 'school' ? 'fa-graduation-cap' : 'fa-briefcase'}}" ng-class=""></i>

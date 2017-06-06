@@ -94,7 +94,6 @@ a.pure-button-primary {
 .home-menu {
 	padding: 0.5em;
 	text-align: center;
-	box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
 
 .home-menu {
@@ -135,7 +134,6 @@ a.pure-button-primary {
  */
 
 .splash-container {
-	background: #1f8dd6;
 	z-index: 1;
 	overflow: hidden;
 	/* The following styles are required for the "scroll-over" effect */
@@ -150,7 +148,7 @@ a.pure-button-primary {
 	/* absolute center .splash within .splash-container */
 	width: 80%;
 	margin: auto;
-	padding: 6em 3em 3em 3em;
+	padding: 4.34em 2em 1.67em 2em;
 	position: absolute;
 	text-align: center;
 	text-transform: uppercase;
@@ -244,6 +242,12 @@ a.pure-button-primary {
 	.home-menu {
 		text-align: left;
 	}
+	.home-menu .pure-menu-heading {
+		float: left;
+	}
+	.home-menu .pure-menu-pages {
+		float: left;
+	}
 	.home-menu ul {
 		float: right;
 	}
@@ -257,7 +261,7 @@ a.pure-button-primary {
 	to work with */
 	.splash {
 		width: 50%;
-		padding: 3em 6em 3em 6em;
+		padding: 2em 4em 2.27em 4em;
 	}
 
 	.splash-head {
@@ -278,18 +282,9 @@ a.pure-button-primary {
  * of the mobile and tablet styles.
  */
 @media (min-width: 78em) {
-	/* We increase the header font size even more */
-	.splash-head {
-		font-size: 300%;
-	}
 }
 
 .pure-menu-horizontal .pure-menu-heading, .pure-menu-horizontal .pure-menu-item, .pure-menu-horizontal .pure-menu-separator {
 	/* Override the value from purecss so that the header and links line up better */
 	vertical-align: initial;
-}
-
-.home-menu .pure-menu-pages {
-	/* Separate the internal links from the external links */
-	float: none;
 }
