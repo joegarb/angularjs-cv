@@ -34,4 +34,15 @@ module.exports = function($scope, $routeParams) {
     }
     return result;
   };
+
+  var navHeight = $('.pure-menu-fixed').outerHeight();
+
+  $('.splash-scroll-button a').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate(
+      {
+        scrollTop: $($(this).attr('href')).offset().top - navHeight
+      }, 200, 'linear'
+    );
+  });
 };
