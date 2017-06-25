@@ -111,6 +111,7 @@ a.pure-button-primary {
 	color: white;
 	font-weight: 400;
 	font-size: 120%;
+	display: none;
 }
 
 .home-menu .pure-menu-selected a {
@@ -244,6 +245,7 @@ a.pure-button-primary {
 	}
 	.home-menu .pure-menu-heading {
 		float: left;
+		display: inline-block;
 	}
 	.home-menu .pure-menu-pages {
 		float: left;
