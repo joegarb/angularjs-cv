@@ -12,6 +12,10 @@
     "url": "https://github.com/joegarb/joegarbcom/issues"
   },
   "homepage": "https://github.com/joegarb/joegarbcom#readme",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build"
+  },
   "devDependencies": {
     "angular": "^1.5.8",
     "angular-css": "^1.0.8",
@@ -40,9 +44,5 @@
     "globals": {
       "$": true
     }
-  },
-  "scripts": {
-    "start": "gulp dev",
-    "build": "gulp build"
   }
 }

@@ -10,4 +10,4 @@ The code behind joegarb.com
     npm install
 
 ## Run Development Server
-    npm start
+    npm run dev
