@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="joegarb">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <base href="/">
-  <title>Joe Garber</title>
-  <meta name="description" content="Joe Garber: An experienced software engineer, proficient in a wide range of technologies and passionate for software quality and process improvement.">
-  <script type="application/ld+json">
-  {
-    "@context": "http://schema.org/",
-    "@type": "Person",
-    "name": "Joe Garber",
-    "description": "An experienced software engineer, proficient in a wide range of technologies and passionate for software quality and process improvement."
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <base href="/">
+    <title>Joe Garber</title>
+    <meta name="description" content="Joe Garber: An experienced software engineer, proficient in a wide range of technologies and passionate for software quality and process improvement.">
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "Person",
+        "name": "Joe Garber",
+        "description": "An experienced software engineer, proficient in a wide range of technologies and passionate for software quality and process improvement."
+    }
+    </script>
 
-  <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
 
-  <!--[if lte IE 8]>
-  <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-old-ie-min.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
-  <!--<![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+    <!--<![endif]-->
 
-  <script src="https://use.fontawesome.com/6e0e5cc21c.js"></script>
-  
-  <!--[if lt IE 9]>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
-  <![endif]-->
+    <script src="https://use.fontawesome.com/6e0e5cc21c.js"></script>
 
-  <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
-  <link rel="stylesheet" href="shared/styles/bundle.css" inline>
-  <script src="bundle.js" inline></script>
+    <!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <![endif]-->
+
+    <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="shared/styles/bundle.css" inline>
+    <script src="bundle.js" inline></script>
 </head>
 
 <body>
 
 <div class="header" ng-controller="HeaderController">
-  <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-    <a class="pure-menu-heading" href="/">Joe Garber</a>
-    <ul class="pure-menu-list pure-menu-pages">
-      <li class="pure-menu-item"><a jg-href="/cv" class="pure-menu-link">CV</a></li>
-    </ul>
-    <ul class="pure-menu-list">
-      <li class="pure-menu-item"><a jg-href="https://www.linkedin.com/in/joegarb" target="_blank" class="pure-menu-link"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-      <li class="pure-menu-item"><a jg-href="https://github.com/joegarb" target="_blank" class="pure-menu-link"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-    </ul>
-  </div>
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="/">Joe Garber</a>
+        <ul class="pure-menu-list pure-menu-pages">
+            <li class="pure-menu-item"><a jg-href="/cv" class="pure-menu-link">CV</a></li>
+        </ul>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item">
+                <a jg-href="https://www.linkedin.com/in/joegarb" target="_blank" class="pure-menu-link"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+            </li>
+            <li class="pure-menu-item">
+                <a jg-href="https://github.com/joegarb" target="_blank" class="pure-menu-link"><i class="fa fa-github" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </div>
 </div>
 
 <div ng-view>

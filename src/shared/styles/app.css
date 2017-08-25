@@ -1,7 +1,7 @@
 * {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /*
@@ -10,9 +10,9 @@
  */
 
 body {
-	line-height: 1.7em;
-	color: #7f8c8d;
-	font-size: 13px;
+    line-height: 1.7em;
+    color: #7f8c8d;
+    font-size: 13px;
 }
 
 h1,
@@ -22,12 +22,12 @@ h4,
 h5,
 h6,
 label {
-	color: #34495e;
+    color: #34495e;
 }
 
 .pure-img-responsive {
-	max-width: 100%;
-	height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 /*
@@ -36,16 +36,16 @@ label {
  */
 
 .l-box {
-	padding: 1em;
+    padding: 1em;
 }
 
 .l-box-lrg {
-	padding: 2em;
-	border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 2em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .is-center {
-	text-align: center;
+    text-align: center;
 }
 
 /*
@@ -54,17 +54,17 @@ label {
  */
 
 .pure-form label {
-	margin: 1em 0 0;
-	font-weight: bold;
-	font-size: 100%;
+    margin: 1em 0 0;
+    font-weight: bold;
+    font-size: 100%;
 }
 
 .pure-form input[type] {
-	border: 2px solid #ddd;
-	box-shadow: none;
-	font-size: 100%;
-	width: 100%;
-	margin-bottom: 1em;
+    border: 2px solid #ddd;
+    box-shadow: none;
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 1em;
 }
 
 /*
@@ -73,17 +73,17 @@ label {
  */
 
 .pure-button {
-	background-color: #1f8dd6;
-	color: white;
-	padding: 0.5em 2em;
-	border-radius: 5px;
+    background-color: #1f8dd6;
+    color: white;
+    padding: 0.5em 2em;
+    border-radius: 5px;
 }
 
 a.pure-button-primary {
-	background: white;
-	color: #1f8dd6;
-	border-radius: 5px;
-	font-size: 120%;
+    background: white;
+    color: #1f8dd6;
+    border-radius: 5px;
+    font-size: 120%;
 }
 
 /*
@@ -92,41 +92,41 @@ a.pure-button-primary {
  */
 
 .home-menu {
-	padding: 0.5em;
-	text-align: center;
+    padding: 0.5em;
+    text-align: center;
 }
 
 .home-menu {
-	background: #333;
+    background: #333;
 }
 
 .pure-menu.pure-menu-fixed {
-	/* Fixed menus normally have a border at the bottom. */
-	border-bottom: none;
-	/* I need a higher z-index here because of the scroll-over effect. */
-	z-index: 4;
+    /* Fixed menus normally have a border at the bottom. */
+    border-bottom: none;
+    /* I need a higher z-index here because of the scroll-over effect. */
+    z-index: 4;
 }
 
 .home-menu .pure-menu-heading {
-	color: white;
-	font-weight: 400;
-	font-size: 120%;
-	display: none;
+    color: white;
+    font-weight: 400;
+    font-size: 120%;
+    display: none;
 }
 
 .home-menu .pure-menu-selected a {
-	color: white;
+    color: white;
 }
 
 .home-menu a {
-	color: #6FBEF3;
+    color: #6FBEF3;
 }
 
 .home-menu li a:hover,
 .home-menu li a:focus {
-	background: none;
-	border: none;
-	color: #AECFE5;
+    background: none;
+    border: none;
+    color: #AECFE5;
 }
 
 /*
@@ -135,40 +135,40 @@ a.pure-button-primary {
  */
 
 .splash-container {
-	z-index: 1;
-	overflow: hidden;
-	/* The following styles are required for the "scroll-over" effect */
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	position: fixed !important;
+    z-index: 1;
+    overflow: hidden;
+    /* The following styles are required for the "scroll-over" effect */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed !important;
 }
 
 .splash {
-	/* absolute center .splash within .splash-container */
-	width: 80%;
-	margin: auto;
-	padding: 4.34em 2em 1.67em 2em;
-	position: absolute;
-	text-align: center;
-	text-transform: uppercase;
+    /* absolute center .splash within .splash-container */
+    width: 80%;
+    margin: auto;
+    padding: 4.34em 2em 1.67em 2em;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
-	font-size: 20px;
-	font-weight: bold;
-	color: white;
-	font-weight: 100;
-	line-height: 1em;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    font-weight: 100;
+    line-height: 1em;
 }
 
 /* This is the subheading that appears on the blue section */
 .splash-subhead {
-	color: white;
-	letter-spacing: 0.05em;
-	opacity: 0.8;
+    color: white;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
 }
 
 /*
@@ -176,54 +176,55 @@ a.pure-button-primary {
  * This represents the content area (everything below the blue section)
  */
 .content-wrapper {
-	/* These styles are required for the "scroll-over" effect */
-	position: absolute;
-	top: 100%;
-	width: 100%;
-	min-height: 12%;
-	z-index: 2;
-	background: white;
+    /* These styles are required for the "scroll-over" effect */
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    min-height: 12%;
+    z-index: 2;
+    background: white;
 
 }
 
 /* We want to give the content area some more padding */
 .content {
-	padding: 1em 1em 3em;
+    padding: 1em 1em 3em;
 }
 
 /* This is the class used for the main content headers (<h2>) */
 .content-head {
-	font-weight: 400;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	margin: 2em 0 1em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 2em 0 1em;
 }
 
 /* This is a modifier class used when the content-head is inside a ribbon */
 .content-head-ribbon, .content-subhead-ribbon {
-	color: white;
+    color: white;
 }
 
 /* This is the class used for the content sub-headers (<h3>) */
 .content-subhead {
-	color: #1f8dd6;
+    color: #1f8dd6;
 }
+
 .content-subhead i {
-	margin-right: 7px;
+    margin-right: 7px;
 }
 
 /* This is the class used for the dark-background areas. */
 .ribbon {
-	background: #2d3e50;
-	color: #aaa;
+    background: #2d3e50;
+    color: #aaa;
 }
 
 /* This is the class used for the footer */
 .footer {
-	background: #111;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
+    background: #111;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /*
@@ -233,48 +234,49 @@ a.pure-button-primary {
  */
 @media (min-width: 48em) {
 
-	/* We increase the body font size */
-	body {
-		font-size: 14px;
-	}
+    /* We increase the body font size */
+    body {
+        font-size: 14px;
+    }
 
-	/* We can align the menu header to the left, but float the
-	menu items to the right. */
-	.home-menu {
-		text-align: left;
-	}
-	.home-menu .pure-menu-heading {
-		float: left;
-		display: inline-block;
-	}
-	.home-menu .pure-menu-pages {
-		float: left;
-	}
-	.home-menu ul {
-		float: right;
-	}
+    /* We can align the menu header to the left, but float the
+    menu items to the right. */
+    .home-menu {
+        text-align: left;
+    }
 
-	/* We increase the height of the splash-container */
-	/*    .splash-container {
-			height: 500px;
-		}*/
+    .home-menu .pure-menu-heading {
+        float: left;
+        display: inline-block;
+    }
 
-	/* We decrease the width of the .splash, since we have more width
-	to work with */
-	.splash {
-		width: 50%;
-		padding: 2em 4em 2.27em 4em;
-	}
+    .home-menu .pure-menu-pages {
+        float: left;
+    }
 
-	.splash-head {
-		font-size: 250%;
-	}
+    .home-menu ul {
+        float: right;
+    }
 
+    /* We increase the height of the splash-container */
+    /*    .splash-container {
+            height: 500px;
+        }*/
+    /* We decrease the width of the .splash, since we have more width
+    to work with */
+    .splash {
+        width: 50%;
+        padding: 2em 4em 2.27em 4em;
+    }
 
-	/* We remove the border-separator assigned to .l-box-lrg */
-	.l-box-lrg {
-		border: none;
-	}
+    .splash-head {
+        font-size: 250%;
+    }
+
+    /* We remove the border-separator assigned to .l-box-lrg */
+    .l-box-lrg {
+        border: none;
+    }
 
 }
 
@@ -287,6 +289,6 @@ a.pure-button-primary {
 }
 
 .pure-menu-horizontal .pure-menu-heading, .pure-menu-horizontal .pure-menu-item, .pure-menu-horizontal .pure-menu-separator {
-	/* Override the value from purecss so that the header and links line up better */
-	vertical-align: initial;
+    /* Override the value from purecss so that the header and links line up better */
+    vertical-align: initial;
 }

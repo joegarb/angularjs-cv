@@ -1,0 +1,10 @@
+{
+    "extends": ["eslint:recommended", "google"],
+    "rules": {
+        "indent": ["error", 4],
+        "max-len": ["warn", 120]
+    },
+    "globals": {
+        "$": true
+    }
+}
