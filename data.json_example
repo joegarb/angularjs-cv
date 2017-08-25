@@ -1,0 +1,29 @@
+{
+    "cv": {
+        "experience": [
+            {
+                "type": "work",
+                "role": "Software Engineer",
+                "organization": "Google",
+                "startDate": "2013-02-01",
+                "endDate": null,
+                "description": "<p>I work on x and y and have z accomplishments</p>"
+            },
+            {
+                "type": "work",
+                "role": "Software Engineer",
+                "organization": "Facebook",
+                "startDate": "2010-06-01",
+                "endDate": "2013-01-01",
+                "description": "<p>I previously worked on a, b, and c</p>"
+            },
+            {
+                "type": "school",
+                "role": "B.S. in Computer Science",
+                "organization": "Massachusetts Institute of Technology",
+                "endDate": "2010-05-01",
+                "description": "<p>This program had a strong emphasis on lorem ipsum</p>"
+            }
+        ]
+    }
+}

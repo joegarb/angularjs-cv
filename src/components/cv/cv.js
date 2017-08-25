@@ -3,7 +3,8 @@
 module.exports = function($scope, $routeParams) {
     var moment = require('moment');
 
-    $scope.data = require('./cv.json');
+    // data.json should be located at the project root
+    $scope.data = require('../../../data.json').cv;
 
     $scope.getDateString = function(date) {
         if (!date) {
