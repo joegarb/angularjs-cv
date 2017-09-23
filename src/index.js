@@ -12,7 +12,6 @@ var app = require('angular').module(
                 '/cv',
                 {
                     templateUrl: 'components/cv/cv.html',
-                    controller: 'CvController',
                     css: 'components/cv/cv.css'
                 }
             );

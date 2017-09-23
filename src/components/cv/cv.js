@@ -1,19 +1,20 @@
 'use strict';
 
-module.exports = function($scope) {
+module.exports = function() {
+    var ctrl = this;
     var moment = require('moment');
 
     // data.json should be located at the project root
-    $scope.data = require('../../../data.json').cv;
+    ctrl.data = require('../../../data.json').cv;
 
-    $scope.getDateString = function(date) {
+    ctrl.getDateString = function(date) {
         if (!date) {
             return 'Present';
         }
         return moment(date).format('MMM YYYY');
     };
 
-    $scope.getDuration = function(startDate, endDate) {
+    ctrl.getDuration = function(startDate, endDate) {
         var end;
         if (endDate) {
             end = moment(endDate);
