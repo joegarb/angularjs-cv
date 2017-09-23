@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function($scope, $routeParams) {
+module.exports = function($scope) {
     var moment = require('moment');
 
     // data.json should be located at the project root
@@ -35,15 +35,4 @@ module.exports = function($scope, $routeParams) {
         }
         return result;
     };
-
-    var navHeight = $('.pure-menu-fixed').outerHeight();
-
-    $('.splash-scroll-button a').on('click', function(e) {
-        e.preventDefault();
-        $('html, body').animate(
-            {
-                scrollTop: $($(this).attr('href')).offset().top - navHeight
-            }, 200, 'linear'
-        );
-    });
 };

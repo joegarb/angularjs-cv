@@ -9,5 +9,5 @@ app.controller(
 
 app.controller(
     'CvController',
-    ['$scope', '$routeParams', require('./cv/cv.js')]
+    ['$scope', require('./cv/cv.js')]
 );
