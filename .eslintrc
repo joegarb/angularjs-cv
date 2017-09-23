@@ -2,12 +2,15 @@
     "extends": ["eslint:recommended", "google"],
     "rules": {
         "indent": ["error", 4],
-        "max-len": ["warn", 120]
+        "max-len": ["warn", 120],
+        "no-var": 0,
+        "comma-dangle": ["error", "never"]
     },
     "globals": {
         "$": true
     },
     "env": {
-        "browser": true
+        "browser": true,
+        "node": true
     }
 }
