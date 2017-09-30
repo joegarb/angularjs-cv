@@ -7,10 +7,13 @@
         "comma-dangle": ["error", "never"]
     },
     "globals": {
-        "$": true
+        "$": true,
+        "angular": true,
+        "chai": true
     },
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "mocha": true
     }
 }

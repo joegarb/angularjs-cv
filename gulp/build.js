@@ -12,7 +12,7 @@ const rev = require('gulp-rev');
 const revReplace = require('gulp-rev-replace');
 const gutil = require('gulp-util');
 
-gulp.task('build', ['clean'], () => {
+gulp.task('build', ['clean', 'lint', 'setup'], () => {
     return Promise.all([
         new Promise((resolve, reject) => {
             gutil.log('Building javascript');

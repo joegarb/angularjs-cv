@@ -6,7 +6,7 @@ const concat = require('gulp-concat');
 const gutil = require('gulp-util');
 
 // Similar to the production build task, but without a few things like minification
-gulp.task('build-dev', ['clean', 'lint'], () => {
+gulp.task('build-dev', ['clean', 'lint', 'setup'], () => {
     return Promise.all([
         new Promise((resolve, reject) => {
             gutil.log('Building javascript');
