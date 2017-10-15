@@ -1,9 +1,9 @@
 'use strict';
 
-var app = require('angular').module(
+require('angular').module(
     'joegarb',
     [
-        'ngRoute', 'angularCSS', 'duScroll',
+        'ngRoute', 'angularCSS',
         'joegarb.controllers', 'joegarb.directives', 'joegarb.filters'
     ],
     ['$routeProvider', '$locationProvider',
@@ -35,13 +35,8 @@ var app = require('angular').module(
         }]
 );
 
-// When scrolling to a particular element on the page via a link like <a href="#experience" du-smooth-scroll>,
-// leave space at the top for the fixed nav bar. It'd be nice to not have the height hard-coded here though...
-app.value('duScrollOffset', 53.78125);
-
 require('angular-route');
 require('angular-css');
-require('angular-scroll');
 
 require('./components');
 require('./shared');

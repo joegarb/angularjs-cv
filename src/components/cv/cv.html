@@ -1,30 +1,16 @@
 <div ng-controller="CvController as ctrl">
-    <div class="splash-container">
-        <div class="splash">
-            <h1 class="splash-head">Hi, I'm Joe Garber</h1>
-            <p class="splash-subhead">
-                An experienced software engineer, proficient in a wide range of technologies and passionate for software quality and process improvement.
-            </p>
-        </div>
-        <div class="splash-scroll-button">
-            <a href="#experience" du-smooth-scroll><span></span>Scroll</a>
-        </div>
-    </div>
-
-    <div class="content-wrapper" id="experience">
-        <div class="content">
-            <h2 class="content-head is-center">Experience</h2>
-            <ul class="timeline">
-                <li ng-repeat="item in ctrl.data.experience">
-                    <div ng-if="item.type == 'school'" class="timeline-date">Completed {{ctrl.getDateString(item.endDate)}}</div>
-                    <div ng-if="item.type != 'school'" class="timeline-date">{{ctrl.getDuration(item.startDate, item.endDate)}} ({{ctrl.getDateString(item.startDate)}} - {{ctrl.getDateString(item.endDate)}})</div>
-                    <i class="timeline-icon fa {{item.type == 'school' ? 'fa-graduation-cap' : 'fa-briefcase'}}" ng-class=""></i>
-                    <div class="timeline-item">
-                        <h3 class="timeline-header">{{item.role}} - {{item.organization}}</h3>
-                        <div class="timeline-body" ng-bind-html="item.description | trustAsHtml"></div>
-                    </div>
-                </li>
-            </ul>
-        </div>
+    <div class="content">
+        <h2 class="content-head centered">Experience</h2>
+        <ul class="timeline">
+            <li ng-repeat="item in ctrl.data.experience">
+                <div ng-if="item.type == 'school'" class="timeline-date">Completed {{ctrl.getDateString(item.endDate)}}</div>
+                <div ng-if="item.type != 'school'" class="timeline-date">{{ctrl.getDuration(item.startDate, item.endDate)}} ({{ctrl.getDateString(item.startDate)}} - {{ctrl.getDateString(item.endDate)}})</div>
+                <i class="timeline-icon fa {{item.type == 'school' ? 'fa-graduation-cap' : 'fa-briefcase'}}" ng-class=""></i>
+                <div class="timeline-item">
+                    <h3 class="timeline-header">{{item.role}} - {{item.organization}}</h3>
+                    <div class="timeline-body" ng-bind-html="item.description | trustAsHtml"></div>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>
