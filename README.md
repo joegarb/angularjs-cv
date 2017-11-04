@@ -6,7 +6,7 @@ The code behind [joegarb.com](http://joegarb.com/)
 
 ## Requirements
 
-- npm
+- npm 5.x or greater
 
 ## Setup
 
