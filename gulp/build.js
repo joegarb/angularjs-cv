@@ -10,12 +10,12 @@ const inlineSource = require('gulp-inline-source');
 const gulpif = require('gulp-if');
 const rev = require('gulp-rev');
 const revReplace = require('gulp-rev-replace');
-const gutil = require('gulp-util');
+const log = require('fancy-log');
 
 gulp.task('build', ['clean', 'lint', 'setup'], () => {
     return Promise.all([
         new Promise((resolve, reject) => {
-            gutil.log('Building javascript');
+            log('Building javascript');
             gulp
                 .src('src/index.js')
                 .pipe(browserify())
@@ -25,7 +25,7 @@ gulp.task('build', ['clean', 'lint', 'setup'], () => {
                 .on('end', resolve);
         }),
         new Promise((resolve, reject) => {
-            gutil.log('Copying .htaccess, sitemap.xml, robots.txt');
+            log('Copying .htaccess, sitemap.xml, robots.txt');
             gulp
                 .src([
                     'src/.htaccess',
@@ -35,14 +35,14 @@ gulp.task('build', ['clean', 'lint', 'setup'], () => {
                 .on('end', resolve);
         }),
         new Promise((resolve, reject) => {
-            gutil.log('Copying images');
+            log('Copying images');
             gulp
                 .src('src/**/*.{png,jpg}')
                 .pipe(gulp.dest('dist'))
                 .on('end', resolve);
         }),
         new Promise((resolve, reject) => {
-            gutil.log('Minifying html');
+            log('Minifying html');
             gulp
                 .src('src/**/*.html')
                 .pipe(htmlmin({collapseWhitespace: true}))
@@ -50,7 +50,7 @@ gulp.task('build', ['clean', 'lint', 'setup'], () => {
                 .on('end', resolve);
         }),
         new Promise((resolve, reject) => {
-            gutil.log('Minifying component CSS');
+            log('Minifying component CSS');
             gulp
                 .src('src/components/**/*.css')
                 .pipe(cleanCSS({compatibility: 'ie8'}))
@@ -58,7 +58,7 @@ gulp.task('build', ['clean', 'lint', 'setup'], () => {
                 .on('end', resolve);
         }),
         new Promise((resolve, reject) => {
-            gutil.log('Minifying unbundled shared CSS');
+            log('Minifying unbundled shared CSS');
             gulp
                 .src('src/shared/styles/unbundled/*.css')
                 .pipe(cleanCSS({compatibility: 'ie8'}))
@@ -66,7 +66,7 @@ gulp.task('build', ['clean', 'lint', 'setup'], () => {
                 .on('end', resolve);
         }),
         new Promise((resolve, reject) => {
-            gutil.log('Minifying/bundling shared CSS');
+            log('Minifying/bundling shared CSS');
             gulp
                 .src('src/shared/styles/*.css')
                 .pipe(cleanCSS({compatibility: 'ie8'}))
@@ -76,13 +76,13 @@ gulp.task('build', ['clean', 'lint', 'setup'], () => {
         })
     ]).then(() => {
         return new Promise((resolve, reject) => {
-            gutil.log('Inlining js/css/images into the html');
+            log('Inlining js/css/images into the html');
             gulp
                 .src('dist/*.html')
                 .pipe(inlineSource())
                 .pipe(gulp.dest('dist'))
                 .on('end', () => {
-                    gutil.log('Versioning filenames for cache busting');
+                    log('Versioning filenames for cache busting');
                     gulp
                         .src([
                             'dist/**/*.html',

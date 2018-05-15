@@ -1,8 +1,8 @@
 {
-    "extends": ["eslint:recommended", "google"],
+    "extends": ["google"],
     "rules": {
         "indent": ["error", 4],
-        "max-len": ["warn", 120],
+        "max-len": ["warn", 150],
         "no-var": 0,
         "comma-dangle": ["error", "never"]
     },
