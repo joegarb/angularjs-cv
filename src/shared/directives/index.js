@@ -2,7 +2,4 @@
 
 var app = require('angular').module('joegarb.directives', []);
 
-app.directive(
-    'jgHref',
-    ['$location', '$route', require('./href-directive.js')]
-);
+app.directive('jgHref', ['$location', '$route', require('./href-directive.js')]);

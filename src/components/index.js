@@ -1,13 +1,6 @@
 'use strict';
 
-var app = require('angular').module('joegarb.controllers', ['ngRoute']);
+var app = require('angular').module('joegarb.components', ['ngRoute']);
 
-app.controller(
-    'HeaderController',
-    ['$scope', '$window', '$location', require('./header/header.js')]
-);
-
-app.controller(
-    'CvController',
-    ['$scope', require('./cv/cv.js')]
-);
+app.component('header', require('./header/header.js'));
+app.component('cv', require('./cv/cv.js'));

@@ -2,33 +2,22 @@
 
 require('angular').module(
     'joegarb',
-    [
-        'ngRoute',
-        'joegarb.controllers', 'joegarb.directives', 'joegarb.filters'
-    ],
+    ['ngRoute', 'joegarb.components', 'joegarb.directives', 'joegarb.filters'],
     ['$routeProvider', '$locationProvider',
         function($routeProvider, $locationProvider) {
-            $routeProvider.when(
-                '/cv',
-                {
-                    templateUrl: 'components/cv/cv.html'
-                }
-            );
+            $routeProvider.when('/cv', {
+                template: '<cv></cv>'
+            });
 
             // In case anyone has the outdated resume link, redirect it to cv
-            $routeProvider.when(
-                '/resume',
-                {
-                    redirectTo: '/cv'
-                }
-            );
+            $routeProvider.when('/resume', {
+                redirectTo: '/cv'
+            });
 
             // Redirect all requests to the cv page until we have a proper home page
-            $routeProvider.otherwise(
-                {
-                    redirectTo: '/cv'
-                }
-            );
+            $routeProvider.otherwise({
+                redirectTo: '/cv'
+            });
 
             $locationProvider.html5Mode(true);
         }]
