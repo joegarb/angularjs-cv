@@ -3,7 +3,7 @@
 require('angular').module(
     'joegarb',
     [
-        'ngRoute', 'angularCSS',
+        'ngRoute',
         'joegarb.controllers', 'joegarb.directives', 'joegarb.filters'
     ],
     ['$routeProvider', '$locationProvider',
@@ -11,8 +11,7 @@ require('angular').module(
             $routeProvider.when(
                 '/cv',
                 {
-                    templateUrl: 'components/cv/cv.html',
-                    css: 'components/cv/cv.css'
+                    templateUrl: 'components/cv/cv.html'
                 }
             );
 
@@ -36,7 +35,6 @@ require('angular').module(
 );
 
 require('angular-route');
-require('angular-css');
 
 require('./components');
 require('./shared');

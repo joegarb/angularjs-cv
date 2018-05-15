@@ -72,21 +72,23 @@ body {
 .ribbon {
     background: #3D444B;
     color: #fff;
-}
 
-.ribbon a:link,
-.ribbon a:visited,
-.ribbon a:hover,
-.ribbon a:active {
-    color:#fff;
-}
+    a {
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+            color: #fff;
+        }
 
-.ribbon a:link {
-    text-decoration: none;
-}
+        &:link {
+            text-decoration: none;
+        }
 
-.ribbon a:hover {
-    text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 /*

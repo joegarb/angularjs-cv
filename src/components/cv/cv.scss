@@ -1,0 +1,101 @@
+.cv {
+    .timeline {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        /* Vertical bar on the left */
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 30px;
+            width: 5px;
+            background: #eee;
+            margin: 0 0 -40px 0;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+        }
+
+        > li {
+            position: relative;
+            margin: 20px 1em 60px 60px;
+
+            &:after {
+                clear: both;
+            }
+        }
+
+        .timeline-date {
+            padding: 5px;
+            background-color: #fff;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            position: absolute;
+            z-index: 999;
+            top: 20px;
+            left: -60px;
+        }
+
+        .timeline-icon {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            width: 30px;
+            height: 30px;
+            font-size: 15px;
+            line-height: 30px;
+            position: absolute;
+            background: #f4f4f4;
+            border-radius: 50%;
+            text-align: center;
+            top: 80px;
+            left: -42px;
+            z-index: 999;
+        }
+
+        .timeline-item {
+            background: #fff;
+            padding: 60px 20px 20px 20px;
+            position: relative;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            top: 20px;
+        }
+
+        .timeline-header {
+            margin: 0;
+            border-bottom: 1px solid #eee;
+            padding: 5px 5px 5px 0;
+            font-size: 16px;
+            line-height: 1.1;
+
+            a {
+                font-weight: 600;
+            }
+        }
+
+        > .timeline-body {
+            padding: 10px;
+        }
+
+        .timeline-item p {
+            margin-bottom: 0;
+        }
+    }
+
+    /*
+     * Tablet size (and up) styles
+     */
+    @media (min-width: 48em) {
+        /* Extra space on the left and right seems to make the timeline look better */
+        .timeline {
+            margin: 0 1em;
+        }
+    }
+}

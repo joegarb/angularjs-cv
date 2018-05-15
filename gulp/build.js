@@ -10,6 +10,7 @@ const inlineSource = require('gulp-inline-source');
 const gulpif = require('gulp-if');
 const rev = require('gulp-rev');
 const revReplace = require('gulp-rev-replace');
+const sass = require('gulp-sass');
 const log = require('fancy-log');
 
 gulp.task('build', ['clean', 'lint', 'setup'], () => {
@@ -50,25 +51,10 @@ gulp.task('build', ['clean', 'lint', 'setup'], () => {
                 .on('end', resolve);
         }),
         new Promise((resolve, reject) => {
-            log('Minifying component CSS');
+            log('Processing sass');
             gulp
-                .src('src/components/**/*.css')
-                .pipe(cleanCSS({compatibility: 'ie8'}))
-                .pipe(gulp.dest('dist/components'))
-                .on('end', resolve);
-        }),
-        new Promise((resolve, reject) => {
-            log('Minifying unbundled shared CSS');
-            gulp
-                .src('src/shared/styles/unbundled/*.css')
-                .pipe(cleanCSS({compatibility: 'ie8'}))
-                .pipe(gulp.dest('dist/shared/styles/unbundled'))
-                .on('end', resolve);
-        }),
-        new Promise((resolve, reject) => {
-            log('Minifying/bundling shared CSS');
-            gulp
-                .src('src/shared/styles/*.css')
+                .src('src/**/*.scss')
+                .pipe(sass({outputStyle: 'expanded', indentWidth: 4}))
                 .pipe(cleanCSS({compatibility: 'ie8'}))
                 .pipe(concat('bundle.css'))
                 .pipe(gulp.dest('dist/shared/styles'))
