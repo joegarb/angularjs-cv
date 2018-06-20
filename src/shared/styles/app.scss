@@ -23,6 +23,11 @@ body {
  * Customizing the nav bar a bit from stock
  */
 
+.pure-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
 .pure-menu-disabled, .pure-menu-heading, .pure-menu-link {
     padding: 1em 1em;
     color: #3D444B;
@@ -30,10 +35,6 @@ body {
 
 .pure-menu-heading {
     display: inline-block;
-}
-
-.pure-menu-right {
-    float: right;
 }
 
 .pure-menu-active > .pure-menu-link,
