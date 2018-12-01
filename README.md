@@ -1,6 +1,6 @@
-# joegarbcom [![Build Status](https://travis-ci.org/joegarb/joegarbcom.svg?branch=master)](https://travis-ci.org/joegarb/joegarbcom) [![codecov](https://codecov.io/gh/joegarb/joegarbcom/branch/master/graph/badge.svg)](https://codecov.io/gh/joegarb/joegarbcom) [![Docker Automated build](https://img.shields.io/docker/automated/joegarb/joegarbcom.svg)](https://hub.docker.com/r/joegarb/joegarbcom/)
+# angularjs-cv [![Build Status](https://travis-ci.org/joegarb/angularjs-cv.svg?branch=master)](https://travis-ci.org/joegarb/angularjs-cv) [![codecov](https://codecov.io/gh/joegarb/angularjs-cv/branch/master/graph/badge.svg)](https://codecov.io/gh/joegarb/angularjs-cv) [![Docker Automated build](https://img.shields.io/docker/automated/joegarb/angularjs-cv.svg)](https://hub.docker.com/r/joegarb/angularjs-cv/)
 
-The code behind [joegarb.com](http://joegarb.com/)
+A personal resume/CV website built using AngularJS, PureCSS, Apache, Docker
 
 ---
 

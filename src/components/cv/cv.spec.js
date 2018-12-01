@@ -5,7 +5,7 @@ var moment = require('moment');
 describe('cv', function() {
     var ctrl;
 
-    beforeEach(angular.mock.module('joegarb'));
+    beforeEach(angular.mock.module('angularjscv'));
 
     beforeEach(angular.mock.inject(function(_$componentController_) {
         ctrl = _$componentController_('cv', null, {});

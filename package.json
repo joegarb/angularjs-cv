@@ -1,17 +1,17 @@
 {
-  "name": "joegarbcom",
-  "version": "0.1.0",
-  "description": "The code behind joegarb.com",
+  "name": "angularjs-cv",
+  "version": "2.1.0",
+  "description": "AngularJS personal resume/CV website",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joegarb/joegarbcom.git"
+    "url": "git+https://github.com/joegarb/angularjs-cv.git"
   },
   "author": "Joe Garber",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/joegarb/joegarbcom/issues"
+    "url": "https://github.com/joegarb/angularjs-cv/issues"
   },
-  "homepage": "https://github.com/joegarb/joegarbcom#readme",
+  "homepage": "https://github.com/joegarb/angularjs-cv#readme",
   "scripts": {
     "dev": "gulp dev",
     "test": "gulp build && gulp test",

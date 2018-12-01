@@ -1,8 +1,8 @@
 'use strict';
 
 require('angular').module(
-    'joegarb',
-    ['ngRoute', 'joegarb.components', 'joegarb.directives', 'joegarb.filters'],
+    'angularjscv',
+    ['ngRoute', 'angularjscv.components', 'angularjscv.directives', 'angularjscv.filters'],
     ['$routeProvider', '$locationProvider',
         function($routeProvider, $locationProvider) {
             $routeProvider.when('/cv', {
